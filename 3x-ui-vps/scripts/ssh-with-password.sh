@@ -41,13 +41,6 @@ if [[ -z "${SSH_PASSWORD}" ]]; then
   exec ssh "$@"
 fi
 
-if command -v sshpass >/dev/null 2>&1; then
-  exec sshpass -p "${SSH_PASSWORD}" ssh \
-    -o PubkeyAuthentication=no \
-    -o PreferredAuthentications=password,keyboard-interactive,password \
-    "$@"
-fi
-
 ASKPASS_SCRIPT="$(mktemp)"
 cleanup() {
   rm -f "${ASKPASS_SCRIPT}"
