@@ -26,7 +26,16 @@
 
 ## Как Использовать
 
-Установите скилл по инструкции ниже и напишите в чате:
+Установите скилл по инструкции ниже и затем используйте его в чате.
+
+Примеры:
+
+- `Codex`: `$3x-ui-vps, настрой мне VPN`
+- `Claude Code`: `$3x-ui-vps, настрой мне VPN`
+- `Cursor`: `Use the 3x-ui-vps skill and set up a VPN for me`
+- `OpenClaw`: `Use the 3x-ui-vps skill and set up a VPN for me`
+
+Пример запроса:
 
 ```text
 $3x-ui-vps, настрой мне VPN

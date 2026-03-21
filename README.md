@@ -26,7 +26,16 @@ The skill includes 5 commands:
 
 ## How To Use It
 
-Install the skill using the instructions below and write this in chat:
+Install the skill using the instructions below and then use it in chat.
+
+Examples:
+
+- `Codex`: `$3x-ui-vps, set up a VPN for me`
+- `Claude Code`: `$3x-ui-vps, set up a VPN for me`
+- `Cursor`: `Use the 3x-ui-vps skill and set up a VPN for me`
+- `OpenClaw`: `Use the 3x-ui-vps skill and set up a VPN for me`
+
+Example prompt:
 
 ```text
 $3x-ui-vps, set up a VPN for me
