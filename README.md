@@ -14,6 +14,35 @@ The canonical skill bundle lives in [`3x-ui-vps/`](3x-ui-vps/).
 
 Architecture details: [`3x-ui-vps/references/architecture.md`](3x-ui-vps/references/architecture.md)
 
+## What The Skill Can Do
+
+The skill includes 5 commands:
+
+1. `Fresh deploy` configures your server from scratch, including dependency installation, port hardening, and base setup.
+2. `Panel access` opens an SSH tunnel from the server to your computer so you can access the 3X UI panel.
+3. `Quick inbound bootstrap` creates an Xray VLESS inbound on port `443` with nginx in front of it.
+4. `Add another client to an existing inbound` adds a client to an existing inbound so you can connect one more device.
+5. `Updates` updates the system (`apt update` and `apt upgrade`) and 3X UI.
+
+## How To Use It
+
+Install the skill using the instructions below and write this in chat:
+
+```text
+$3x-ui-vps, set up a VPN for me
+```
+
+## Information You Will Be Asked For
+
+After launch, the skill will ask for additional information:
+
+- `SSH target`: the SSH user and IP in the format `root@X.Y.Z.A`; the `root` user is required to install all dependencies
+- `SSH password`: the `root` password; not needed if key-based authentication is already configured
+- `Domain`: your domain or subdomain where the VPN will be set up; buy any domain from a domain seller
+- `Panel Username`: the username for the 3X UI panel
+- `Panel Password`: the password for the 3X UI panel
+- `ACME Email`: your email for issuing a Let's Encrypt SSL certificate for the domain above; optional
+
 ## Included Files
 
 - [`3x-ui-vps/SKILL.md`](3x-ui-vps/SKILL.md): canonical Agent Skills bundle
