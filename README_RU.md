@@ -31,9 +31,9 @@
 Примеры:
 
 - `Codex`: `$3x-ui-vps, настрой мне VPN`
-- `Claude Code`: `$3x-ui-vps, настрой мне VPN`
-- `Cursor`: `Use the 3x-ui-vps skill and set up a VPN for me`
-- `OpenClaw`: `Use the 3x-ui-vps skill and set up a VPN for me`
+- `Claude Code`: `/3x-ui-vps:3x-ui-vps настрой мне VPN`
+- `Cursor`: `Настрой мне VPN, используя инструкции из AGENTS.md`
+- `OpenClaw`: `Настрой мне VPN, используя скилл 3x-ui-vps`
 
 Пример запроса:
 

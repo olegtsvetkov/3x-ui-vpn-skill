@@ -31,9 +31,9 @@ Install the skill using the instructions below and then use it in chat.
 Examples:
 
 - `Codex`: `$3x-ui-vps, set up a VPN for me`
-- `Claude Code`: `$3x-ui-vps, set up a VPN for me`
-- `Cursor`: `Use the 3x-ui-vps skill and set up a VPN for me`
-- `OpenClaw`: `Use the 3x-ui-vps skill and set up a VPN for me`
+- `Claude Code`: `/3x-ui-vps:3x-ui-vps set up a VPN for me`
+- `Cursor`: `Set up a VPN for me using the instructions in AGENTS.md`
+- `OpenClaw`: `Set up a VPN for me using the 3x-ui-vps skill`
 
 Example prompt:
 
