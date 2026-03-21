@@ -1,8 +1,18 @@
-# 3X-UI VPS
+# Run your own Xray VPN in 10 minutes
 
-`3x-ui-vps` is a publish-ready Agent Skill for deploying and managing 3X-UI on a root-managed Ubuntu or Debian VPS with Docker Compose, nginx, ACME certificates, SSH panel tunneling, UFW hardening, and Xray `VLESS + XHTTP` behind nginx.
+Set up an Xray VLESS VPN on your own server or VPS with one command, using the 3X-UI panel for installation and management.
 
-The canonical skill bundle lives in [`3x-ui-vps/`](3x-ui-vps/). The repository also includes packaging for Claude Marketplace, ClawHub, Codex, Cursor, and generic Agent Skills-compatible systems.
+You need:
+
+- a VPS running Ubuntu 24+
+- `1 vCPU`
+- `512 MB` memory
+- `10 GB` disk space
+- about `10 minutes`
+
+The canonical skill bundle lives in [`3x-ui-vps/`](3x-ui-vps/).
+
+Architecture details: [`3x-ui-vps/references/architecture.md`](3x-ui-vps/references/architecture.md)
 
 ## Included Files
 
@@ -16,32 +26,15 @@ The canonical skill bundle lives in [`3x-ui-vps/`](3x-ui-vps/). The repository a
 
 ## Install In Claude Marketplace
 
-This repository is packaged as a Claude Code plugin and is ready for marketplace submission.
-
-For local validation before submission:
-
-```bash
-claude plugin validate .
-claude --plugin-dir .
-```
-
-After the plugin is published to the Anthropic marketplace, users can install it from the Claude plugin UI or with:
+Install it from the Claude plugin UI or with:
 
 ```bash
 claude plugin install 3x-ui-vps
 ```
 
-For a custom marketplace workflow, this repository already includes [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json).
-
 ## Install In ClawHub
 
-The canonical bundle is a standard Agent Skill, so publish the skill directory itself:
-
-```bash
-clawhub publish ./3x-ui-vps
-```
-
-After publication, users can install it with:
+Install it with:
 
 ```bash
 clawhub install 3x-ui-vps

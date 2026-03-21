@@ -1,8 +1,18 @@
-# 3X-UI VPS
+# Запустите свой Xray VPN за 10 минут
 
-`3x-ui-vps` — это готовый к публикации Agent Skill для развертывания и сопровождения 3X-UI на VPS с root-доступом под Ubuntu или Debian с Docker Compose, nginx, ACME-сертификатами, SSH-туннелем к панели, hardening через UFW и Xray `VLESS + XHTTP` за nginx.
+Поднимите Xray VLESS VPN на своем сервере или VPS одной командой, используя панель 3X-UI для установки и управления.
 
-Канонический skill bundle находится в [`3x-ui-vps/`](3x-ui-vps/). Репозиторий также включает упаковку для Claude Marketplace, ClawHub, Codex, Cursor и любых систем, совместимых с Agent Skills.
+Вам понадобится:
+
+- VPS с Ubuntu 24+
+- `1 vCPU`
+- `512 MB` памяти
+- `10 GB` диска
+- около `10 минут`
+
+Канонический skill bundle находится в [`3x-ui-vps/`](3x-ui-vps/).
+
+Детали архитектуры: [`3x-ui-vps/references/architecture.md`](3x-ui-vps/references/architecture.md)
 
 ## Included Files
 
@@ -16,32 +26,15 @@
 
 ## Install In Claude Marketplace
 
-Этот репозиторий упакован как Claude Code plugin и готов к отправке в marketplace.
-
-Для локальной проверки перед отправкой:
-
-```bash
-claude plugin validate .
-claude --plugin-dir .
-```
-
-После публикации плагина в Anthropic marketplace пользователи смогут установить его через Claude plugin UI или командой:
+Установите через Claude plugin UI или командой:
 
 ```bash
 claude plugin install 3x-ui-vps
 ```
 
-Для сценария с кастомным marketplace в репозитории уже есть [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json).
-
 ## Install In ClawHub
 
-Канонический bundle является стандартным Agent Skill, поэтому публиковать нужно саму директорию навыка:
-
-```bash
-clawhub publish ./3x-ui-vps
-```
-
-После публикации пользователи смогут установить его так:
+Установите так:
 
 ```bash
 clawhub install 3x-ui-vps
