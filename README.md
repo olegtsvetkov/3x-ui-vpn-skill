@@ -4,7 +4,7 @@ Set up an Xray VLESS VPN on your own server or VPS with one command, using the 3
 
 You need:
 
-- a VPS running Ubuntu 24+
+- a VPS running Ubuntu 24 or newer at any hosting provider
 - `1 vCPU`
 - `512 MB` memory
 - `10 GB` disk space
