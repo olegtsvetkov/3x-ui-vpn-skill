@@ -32,7 +32,7 @@
 claude plugin install 3x-ui-vps
 ```
 
-## Install In ClawHub
+## Install In OpenClaw
 
 Установите так:
 
