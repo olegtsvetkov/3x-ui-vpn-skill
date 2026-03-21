@@ -1,0 +1,4 @@
+interface:
+  display_name: "3X-UI VPS"
+  short_description: "Deploy and manage a hardened 3X-UI VPN VPS with nginx, ACME, SSH tunneling, and Xray VLESS over XHTTP."
+  default_prompt: "Set up or maintain 3X-UI on an Ubuntu or Debian VPS using the bundled scripts, keep the panel and subscription server loopback-only, and expose VLESS over XHTTP behind nginx on public 443."

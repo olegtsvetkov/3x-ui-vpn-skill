@@ -1,0 +1,24 @@
+{
+  "name": "3x-ui-vps",
+  "version": "1.0.0",
+  "description": "Deploy and manage a hardened 3X-UI VPN VPS with Docker Compose, nginx, ACME, SSH tunneling, and Xray VLESS over XHTTP.",
+  "author": {
+    "name": "Oleg Tsvetkov",
+    "email": "me@olegtsvetkov.com",
+    "url": "https://github.com/olegtsvetkov"
+  },
+  "homepage": "https://github.com/olegtsvetkov/3x-ui-vpn-skill",
+  "repository": "https://github.com/olegtsvetkov/3x-ui-vpn-skill",
+  "license": "MIT",
+  "keywords": [
+    "3x-ui",
+    "vpn",
+    "xray",
+    "vless",
+    "xhttp",
+    "nginx",
+    "vps",
+    "ubuntu",
+    "debian"
+  ]
+}

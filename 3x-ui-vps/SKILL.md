@@ -1,6 +1,14 @@
 ---
 name: 3x-ui-vps
-description: Deploy and manage 3X-UI on a root-managed Ubuntu or Debian VPS using Docker Compose, nginx, ACME certificates, SSH panel tunneling, UFW hardening, and Xray VLESS over XHTTP behind nginx. Use when Codex needs to install 3X-UI from scratch on an Ubuntu or Debian VPS, lock the panel and subscription server to 127.0.0.1, open an SSH tunnel to the panel, create or repair a VLESS TLS inbound behind nginx on public 443, add extra clients to an existing inbound, or update OS packages and the 3X-UI container safely.
+description: Deploy and manage 3X-UI on a root-managed Ubuntu or Debian VPS using Docker Compose, nginx, ACME certificates, SSH panel tunneling, UFW hardening, and Xray VLESS over XHTTP behind nginx. Use when an agent needs to install 3X-UI from scratch on an Ubuntu or Debian VPS, lock the panel and subscription server to 127.0.0.1, open an SSH tunnel to the panel, create or repair a VLESS TLS inbound behind nginx on public 443, add extra clients to an existing inbound, or update OS packages and the 3X-UI container safely.
+license: MIT
+compatibility: Requires Bash, SSH, Python 3, internet access, and a root-managed Ubuntu or Debian VPS target reachable over SSH.
+metadata:
+  author: Oleg Tsvetkov
+  version: "1.0.0"
+  repository: https://github.com/olegtsvetkov/3x-ui-vpn-skill
+  homepage: https://github.com/olegtsvetkov/3x-ui-vpn-skill
+  tags: 3x-ui vpn xray vless xhttp nginx vps ubuntu debian docker
 ---
 
 # 3X-UI VPS
