@@ -5,7 +5,7 @@ license: MIT
 compatibility: Requires Bash, SSH, Python 3, internet access, and a root-managed Ubuntu or Debian VPS target reachable over SSH.
 metadata:
   author: Oleg Tsvetkov
-  version: "1.0.0"
+  version: "1.0.1"
   repository: https://github.com/olegtsvetkov/3x-ui-vpn-skill
   homepage: https://github.com/olegtsvetkov/3x-ui-vpn-skill
   tags: 3x-ui vpn xray vless xhttp nginx vps ubuntu debian docker
