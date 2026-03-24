@@ -1,3 +1,5 @@
+[English](README.md) | [Русский](README_RU.md)
+
 # Run your own Xray VPN in 10 minutes using AI agent
 
 Set up an Xray VLESS VPN on your own server or VPS with one command, using the 3X-UI panel for installation and management.
