@@ -1,0 +1,7 @@
+interface:
+  display_name: "3X-UI VPS"
+  short_description: "Manual 3X-UI VPS deploy and upkeep"
+  default_prompt: "Use $3x-ui-vps to deploy or maintain 3X-UI on a root-managed Ubuntu or Debian VPS with the bundled scripts only."
+
+policy:
+  allow_implicit_invocation: false

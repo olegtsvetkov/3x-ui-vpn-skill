@@ -1,15 +1,14 @@
 {
-  "name": "olegtsvetkov-skills",
+  "name": "olegtsvetkov-plugins",
   "owner": {
     "name": "Oleg Tsvetkov",
-    "email": "me@olegtsvetkov.com",
-    "url": "https://github.com/olegtsvetkov"
+    "email": "me@olegtsvetkov.com"
   },
   "plugins": [
     {
-      "name": "3x-ui-vps",
-      "version": "1.0.1",
-      "description": "Deploy and manage a hardened 3X-UI VPN VPS with Docker Compose, nginx, ACME, SSH tunneling, and Xray VLESS over XHTTP.",
+      "name": "3x-ui-vpn-skills",
+      "version": "2.0.0",
+      "description": "Reusable Claude Code skills for infrastructure workflows, starting with the manual-first 3x-ui-vps skill.",
       "source": "./"
     }
   ]
