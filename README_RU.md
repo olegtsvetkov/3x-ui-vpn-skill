@@ -1,8 +1,8 @@
 [English](README.md) | [Русский](README_RU.md)
 
-# Запустите свой Xray VPN за 10 минут
+# Запуск Xray VPN на своём сервере за 10 минут
 
-Поднимите Xray VLESS VPN на своем сервере или VPS одной командой, используя панель 3X-UI для установки и управления.
+Поднимаем Xray VLESS VPN на своем сервере или VPS одной командой, используя панель 3X-UI для установки и управления.
 
 Вам понадобится:
 
@@ -18,7 +18,7 @@
 
 Корень этого репозитория также является Claude Code plugin с namespace `3x-ui-vpn-skills`. Навык `3x-ui-vps` внутри него работает в manual-first режиме, потому что меняет удаленную инфраструктуру.
 
-## Что Умеет Скилл
+## Что умеет скилл
 
 В скилле есть 5 сценариев:
 
@@ -28,7 +28,7 @@
 4. `Add another client to an existing inbound` добавляет клиента в существующий inbound, чтобы подключить еще одно устройство.
 5. `Updates` обновляет систему (`apt update` и `apt upgrade`) и 3X UI.
 
-## Как Использовать
+## Как использовать
 
 Установите скилл по инструкции ниже и затем используйте его в чате.
 
@@ -45,7 +45,7 @@
 $3x-ui-vps, настрой мне VPN
 ```
 
-## Какие Данные Понадобятся
+## Какие данные понадобятся
 
 После запуска скилл запросит дополнительную информацию:
 
@@ -56,29 +56,33 @@ $3x-ui-vps, настрой мне VPN
 - `Panel Password`: пароль пользователя панели 3X UI
 - `ACME Email`: ваш email для выпуска SSL-сертификата Let's Encrypt для указанного выше домена; не обязательно
 
-## Included Files
+## Файлы в репозитории
 
 - [`skills/3x-ui-vps/SKILL.md`](skills/3x-ui-vps/SKILL.md): канонический bundle по стандарту Agent Skills
 - [`skills/3x-ui-vps/scripts/`](skills/3x-ui-vps/scripts/): единственный допустимый интерфейс для изменений на удаленном сервере
 - [`skills/3x-ui-vps/references/`](skills/3x-ui-vps/references/): справочные документы, загружаемые по мере необходимости
 - [`skills/3x-ui-vps/agents/openai.yaml`](skills/3x-ui-vps/agents/openai.yaml): UI-метаданные для Codex/OpenAI
+- [`.agents/skills`](.agents/skills): repo-scoped совместимый линк Codex на каноническую директорию `skills/`
 - [`3x-ui-vps`](3x-ui-vps): transitional compatibility shim к каноническому bundle `skills/3x-ui-vps/`
 - [`AGENTS.md`](AGENTS.md): легковесная точка входа для Cursor и AGENTS-совместимых инструментов
 - [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json): манифест Claude plugin
 - [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json): манифест Claude marketplace
 
-## Install In Claude Marketplace
+## Установка в любого агента, который поддерживает Agent Skills
 
-Установите через Claude plugin UI или командой:
+Используйте prompt:
 
-```bash
-claude plugin install 3x-ui-vpn-skills@olegtsvetkov-plugins
+```text
+Установи этот скилл: https://github.com/olegtsvetkov/3x-ui-vpn-skill
 ```
 
-Для локальной разработки загружайте корень репозитория как plugin:
+## Установка в Claude Code и Cowork
+
+Установите через Claude plugin UI или через CLI:
 
 ```bash
-claude --plugin-dir .
+claude plugin marketplace add olegtsvetkov/3x-ui-vpn-skill
+claude plugin install 3x-ui-vpn-skills@3x-ui-vpn-skills
 ```
 
 После этого вызывайте навык так:
@@ -87,65 +91,54 @@ claude --plugin-dir .
 /3x-ui-vpn-skills:3x-ui-vps
 ```
 
-## Install In OpenClaw
+## Установка в Codex
 
-Установите так:
-
-```bash
-clawhub install 3x-ui-vps
-```
-
-## Install In Codex
-
-Codex устанавливает пользовательские skills в `$CODEX_HOME/skills` (обычно `~/.codex/skills`).
-
-Внутри Codex самый простой путь — встроенный `$skill-installer` с GitHub URL на поддиректорию:
+Самый простой путь внутри Codex — встроенный `$skill-installer`:
 
 ```text
 $skill-installer install https://github.com/olegtsvetkov/3x-ui-vpn-skill/tree/master/skills/3x-ui-vps
 ```
 
-Ручная установка тоже работает:
+Ручная установка по-прежнему работает через `$CODEX_HOME/skills` (обычно `~/.codex/skills`):
 
-1. Скопируйте или заклонируйте [`skills/3x-ui-vps/`](skills/3x-ui-vps/) в `~/.codex/skills/3x-ui-vps`.
+1. Скопируйте или заклонируйте [`skills/3x-ui-vps/`](skills/3x-ui-vps/) в `$CODEX_HOME/skills/3x-ui-vps`.
 2. Перезапустите Codex.
-
-## Install In Cursor
-
-Cursor читает корневой [`AGENTS.md`](AGENTS.md).
-
-Установка на уровне проекта:
-
-1. Скопируйте [`AGENTS.md`](AGENTS.md) в корень проекта Cursor.
-2. Скопируйте рядом полную папку [`skills/3x-ui-vps/`](skills/3x-ui-vps/) в `skills/3x-ui-vps/`.
-3. Откройте или перезагрузите проект в Cursor.
-
-Установка на уровне репозитория тоже работает: заклонируйте этот репозиторий и откройте его напрямую в Cursor.
-
-## Install In Any Agent Skills-Compatible System
-
-Используйте каноническую директорию [`skills/3x-ui-vps/`](skills/3x-ui-vps/) как переносимый skill bundle.
-
-Требования:
-
-- сохраняйте имя директории строго `3x-ui-vps`
-- сохраняйте вместе [`SKILL.md`](skills/3x-ui-vps/SKILL.md), `scripts/`, `references/` и `agents/`
-- устанавливайте или копируйте эту директорию в папку skills целевого продукта или в его импортный flow
-
-Этот layout следует открытому стандарту Agent Skills и сохраняет навык самодостаточным.
 
 Compatibility note:
 
-- repo-root [`3x-ui-vps`](3x-ui-vps) оставлен как shim на один релиз для клонов этого репозитория
-- не используйте shim как канонический источник для новых интеграций
+- встроенный `$skill-installer` сейчас по умолчанию ставит в `$CODEX_HOME/skills`
+- этот репозиторий также экспонирует `.agents/skills` для repo-scoped совместимости с AGENTS-style discovery flows
 
-## Usage Notes
+## Установка в Cursor
+
+Используйте prompt `/create-skill`:
+
+```text
+/create-skill Установи этот скилл в Cursor: https://github.com/olegtsvetkov/3x-ui-vpn-skill
+```
+
+## Установка в OpenClaw
+
+Установите через **clawhub**:
+
+```bash
+clawhub install 3x-ui-vps
+```
+
+или используйте prompt:
+
+```text
+Установи этот скилл: https://github.com/olegtsvetkov/3x-ui-vpn-skill
+```
+
+## Заметки
 
 - Skill намеренно ориентирован на scripts-first workflow. Все изменения на удаленном сервере должны идти через bundled scripts.
 - Панель и subscription server должны оставаться доступными только через loopback.
 - nginx остается публичной гранью на `80/443`.
 - Клиентский VPN-транспорт — это `VLESS + XHTTP` за nginx.
+- В корне репозитория [`3x-ui-vps`](3x-ui-vps) оставлен как shim на один релиз для клонов этого репозитория. Не используйте shim как канонический источник для новых интеграций.
 
-## License
+## Лицензия
 
 Этот репозиторий и bundled skill распространяются по лицензии MIT. См. [LICENSE](LICENSE) и [`skills/3x-ui-vps/LICENSE.txt`](skills/3x-ui-vps/LICENSE.txt).

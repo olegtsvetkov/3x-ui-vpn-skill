@@ -1,7 +1,11 @@
 # Changelog
 
-## 2.0.0 - 2026-03-25
+## 1.1.0 - 2026-03-25
 
+- aligned install docs with the current Claude marketplace flow
+- added a repo-scoped `.agents/skills` compatibility path for Codex-style discovery
+- rewrote Codex and Cursor docs to distinguish installable skills from AGENTS-based repo instructions
+- downgraded OpenClaw published install claims until the public registry slug is verified
 - moved the canonical `3x-ui-vps` skill bundle to `skills/3x-ui-vps/`
 - kept repo-root `3x-ui-vps/` as a one-release compatibility shim
 - renamed the Claude plugin namespace to `3x-ui-vpn-skills`

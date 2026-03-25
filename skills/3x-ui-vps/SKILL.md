@@ -2,6 +2,13 @@
 name: 3x-ui-vps
 description: Deploy and manage 3X-UI on a root-managed Ubuntu or Debian VPS using Docker Compose, nginx, ACME certificates, SSH panel tunneling, UFW hardening, and Xray VLESS over XHTTP behind nginx. Use when the user explicitly wants to install 3X-UI from scratch, lock the panel and subscription server to 127.0.0.1, open an SSH tunnel to the panel, create or repair a VLESS inbound behind nginx on public 443, add extra clients to an existing inbound, or run safe OS and container updates.
 disable-model-invocation: true
+metadata:
+  openclaw:
+    requires:
+      bins:
+        - bash
+        - python3
+        - ssh
 ---
 
 # 3X-UI VPS
@@ -30,6 +37,8 @@ Collect these before doing any work:
 - optional local tunnel port
 
 Assume Ubuntu or Debian with `apt`. Do not use this skill on other distributions without adapting the Docker repository setup first.
+
+The operator workstation and the target VPS also need outbound internet access for Docker downloads, ACME issuance, and panel API calls.
 
 ## Preflight
 

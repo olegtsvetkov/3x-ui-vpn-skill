@@ -21,5 +21,6 @@ Reference material lives under [`skills/3x-ui-vps/references/`](skills/3x-ui-vps
 
 Compatibility note:
 
+- repo-scoped Codex compatibility is also exposed at [`.agents/skills/3x-ui-vps`](.agents/skills/3x-ui-vps)
 - the repo-root [`3x-ui-vps`](3x-ui-vps) path is a transitional shim for one release
 - treat [`skills/3x-ui-vps/`](skills/3x-ui-vps/) as the only canonical bundle path

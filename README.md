@@ -62,23 +62,27 @@ After launch, the skill will ask for additional information:
 - [`skills/3x-ui-vps/scripts/`](skills/3x-ui-vps/scripts/): the only allowed remote mutation interface
 - [`skills/3x-ui-vps/references/`](skills/3x-ui-vps/references/): on-demand reference docs
 - [`skills/3x-ui-vps/agents/openai.yaml`](skills/3x-ui-vps/agents/openai.yaml): Codex/OpenAI UI metadata
+- [`.agents/skills`](.agents/skills): repo-scoped Codex compatibility link to the canonical `skills/` directory
 - [`3x-ui-vps`](3x-ui-vps): transitional compatibility shim to the canonical `skills/3x-ui-vps/` bundle
 - [`AGENTS.md`](AGENTS.md): lightweight entry point for Cursor and AGENTS-compatible tools
 - [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json): Claude plugin manifest
 - [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json): Claude marketplace manifest
 
-## Install In Claude Marketplace
+## Install In Any Agent Skills-Compatible System
 
-Install it from the Claude plugin UI or with:
+Use the prompt:
 
-```bash
-claude plugin install 3x-ui-vpn-skills@olegtsvetkov-plugins
+```text
+Please, install this skill: https://github.com/olegtsvetkov/3x-ui-vpn-skill
 ```
 
-For local development, load the repository root as the plugin:
+## Install In Claude Code or Cowork
+
+Install it from the Claude plugin UI or with the CLI:
 
 ```bash
-claude --plugin-dir .
+claude plugin marketplace add olegtsvetkov/3x-ui-vpn-skill
+claude plugin install 3x-ui-vpn-skills@3x-ui-vpn-skills
 ```
 
 Then invoke the skill with:
@@ -87,57 +91,45 @@ Then invoke the skill with:
 /3x-ui-vpn-skills:3x-ui-vps
 ```
 
-## Install In OpenClaw
-
-Install it with:
-
-```bash
-clawhub install 3x-ui-vps
-```
-
 ## Install In Codex
 
-Codex installs user skills into `$CODEX_HOME/skills` (usually `~/.codex/skills`).
-
-Inside Codex, the simplest path is the built-in `$skill-installer` with the GitHub subdirectory URL:
+The simplest path inside Codex is the built-in `$skill-installer`:
 
 ```text
 $skill-installer install https://github.com/olegtsvetkov/3x-ui-vpn-skill/tree/master/skills/3x-ui-vps
 ```
 
-Manual installation also works:
+Manual installation still works through `$CODEX_HOME/skills` (usually `~/.codex/skills`):
 
-1. Copy or clone [`skills/3x-ui-vps/`](skills/3x-ui-vps/) into `~/.codex/skills/3x-ui-vps`.
+1. Copy or clone [`skills/3x-ui-vps/`](skills/3x-ui-vps/) into `$CODEX_HOME/skills/3x-ui-vps`.
 2. Restart Codex.
-
-## Install In Cursor
-
-Cursor reads root-level [`AGENTS.md`](AGENTS.md).
-
-Project-level installation:
-
-1. Copy [`AGENTS.md`](AGENTS.md) to the root of your Cursor project.
-2. Copy the full [`skills/3x-ui-vps/`](skills/3x-ui-vps/) folder into `skills/3x-ui-vps/` next to it.
-3. Open or reload the project in Cursor.
-
-Repository-level installation also works: clone this repository and open it directly in Cursor.
-
-## Install In Any Agent Skills-Compatible System
-
-Use the canonical [`skills/3x-ui-vps/`](skills/3x-ui-vps/) directory as the portable skill bundle.
-
-Requirements:
-
-- keep the directory name exactly `3x-ui-vps`
-- keep [`SKILL.md`](skills/3x-ui-vps/SKILL.md), `scripts/`, `references/`, and `agents/` together
-- install or copy that directory into the target product's skills folder or import flow
-
-This layout follows the open Agent Skills specification and keeps the skill self-contained.
 
 Compatibility note:
 
-- the repo-root [`3x-ui-vps`](3x-ui-vps) path is a one-release shim for clones of this repository
-- do not use the shim as the canonical install source for new integrations
+- the built-in `$skill-installer` currently installs into `$CODEX_HOME/skills` by default
+- this repo also exposes `.agents/skills` for repo-scoped compatibility with AGENTS-style discovery flows
+
+## Install In Cursor
+
+Use the `/create-skill` prompt:
+
+```text
+/create-skill Please, install this skill to Cursor: https://github.com/olegtsvetkov/3x-ui-vpn-skill
+```
+
+## OpenClaw Compatibility
+
+Install it with `clawhub`:
+
+```bash
+clawhub install 3x-ui-vps
+```
+
+Or use the prompt:
+
+```text
+Please, install this skill: https://github.com/olegtsvetkov/3x-ui-vpn-skill
+```
 
 ## Usage Notes
 
@@ -145,6 +137,8 @@ Compatibility note:
 - The panel and subscription server are intended to stay loopback-only.
 - nginx remains the public edge on `80/443`.
 - The client-facing VPN transport is `VLESS + XHTTP` behind nginx.
+- The repo-root [`3x-ui-vps`](3x-ui-vps) path is a one-release shim for clones of this repository. Do not use the shim as the canonical install source for new integrations.
+
 
 ## License
 
